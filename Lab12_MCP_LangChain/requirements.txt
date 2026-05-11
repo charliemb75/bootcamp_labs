@@ -1,0 +1,6 @@
+dotenv
+os
+langchain_mcp_adapters
+asyncio
+langchain_openai
+langchain.agents

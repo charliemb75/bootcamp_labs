@@ -1,0 +1,84 @@
+OpenAI API Key Loaded Successfully
+
+Loaded tools:
+- read_file
+- read_text_file
+- read_media_file
+- read_multiple_files
+- write_file
+- edit_file
+- create_directory
+- list_directory
+- list_directory_with_sizes
+- directory_tree
+- move_file
+- search_files
+- get_file_info
+- list_allowed_directories
+
+Loading MCP Resources...
+
+This MCP server does not support resources.
+Error: unhandled errors in a TaskGroup (1 sub-exception)
+
+============================================================
+USER: List all Python files in this directory and each subdirectory
+============================================================
+
+ASSISTANT RESPONSE:
+Here are all the Python files found in the directory 4_Labs and its subdirectories:
+1. `D:\Documents\Bootcamp\4_Labs\Lab10_Complaint_Handler\normalobjects_langchain.py`
+2. `D:\Documents\Bootcamp\4_Labs\Lab11\lab11_functions.py`
+3. `D:\Documents\Bootcamp\4_Labs\Lab11\relevance_scoring_rerankers.py`
+4. `D:\Documents\Bootcamp\4_Labs\Lab12_MCP_LangChain\mcp_langchain.py`
+
+============================================================
+USER: Read the contents of requirements.txt in the directory of Lab 12
+============================================================
+
+ASSISTANT RESPONSE:
+The contents of the `requirements.txt` file in the Lab 12 directory are as follows:
+
+```
+dotenv
+os
+langchain_mcp_adapters
+asyncio
+langchain_openai
+langchain.agents
+```
+
+============================================================
+USER: Summarize the current project structure
+============================================================
+
+ASSISTANT RESPONSE:
+The current project structure in the directory `D:\Documents\Bootcamp\4_Labs` is as follows:
+
+1. **Files:**
+   - `.env`
+   - `.gitignore`
+   - `.vscode/settings.json`
+
+2. **Directories:**
+   - **.git**
+     - Contains various files related to Git version control, including configuration, logs, and objects.
+   - **Lab10_Complaint_Handler**
+     - `lab_summary.md`
+     - `normalobjects_langchain.py`
+     - `readme.md`
+   - **Lab11**
+     - Contains multiple PDF files and Python scripts, including:
+       - `20171026174027.pdf`
+       - `ai_hleg_ethics_guidelines_for_trustworthy_ai-en_87F84A41-A6E8-F38C-BFF661481B40077B_60419.pdf`
+       - `exploration_rag.ipynb`
+       - `lab11_functions.py`
+   - **Lab12_MCP_LangChain**
+     - `mcp_langchain.py`
+     - `requirements.txt`
+   - **Lab9_Chunk_Podcast_PDF**
+     - `chunking_strategies.ipynb`
+     - **data**
+       - Contains PDF and audio files related to ethics guidelines.
+
+This structure indicates a well-organized project with multiple labs, each containing relevant files and directories for specific tasks or experiments. The presence of a `.git` directory suggests that version control is being utilized for the project.
