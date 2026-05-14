@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langchain_core.messages import HumanMessage
-from langchain_openai import ChatOpenAI
 from typing import TypedDict, List, Optional
 from typing_extensions import Annotated
 
@@ -11,8 +10,6 @@ load_dotenv()
 # Make sure OPENAI_API_KEY is set in your .env file
 print("OpenAI API Key loaded:", "OPENAI_API_KEY" in os.environ)
 
-# Initialize OpenAI LLM
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 # ---------------------------------------------------
 # Step 1: Setup and State Definition
@@ -24,17 +21,35 @@ class ComplaintState(TypedDict):
     Every node in the LangGraph receives this state
     and returns updates to it.
     """
-
     complaint: str
+    category: str
+    workflow_path: list[str]
+    status: str
+    check_result: str
+    check_reason: str
+    validation_result: str
+    validation_reason: str
+    investigation_content: str
+    effectiveness_rating: str
+    escalation: bool
+    resolved: bool
+    timestamp: str
 
     # Example:
     # customer_id: str
 
-# ---------------------------------------------------
-# Step 2: Import Workflow Nodes
-# ---------------------------------------------------
 
-from node_functions import intake_node, validate_node, investigate_node, resolve_node, close_node
+# ---------------------------------------------------
+# Step 2: see node_functions.py for node implementations
+# ---------------------------------------------------
+from node_functions import (
+    intake_node,
+    validate_node,
+    investigate_node,
+    resolve_node,
+    close_node
+)
+
 
 # ---------------------------------------------------
 # Step 3: Build the Graph
@@ -53,10 +68,22 @@ workflow.add_node("close", close_node)
 # Define edges
 workflow.set_entry_point("intake")  # Start here
  
-# Intake always goes to validate
-workflow.add_edge("intake", "validate")
- 
-# Linear flow: investigate → resolve → close
+# Intake can go to either validation or back to intake based on the result
+def route_after_intake(state: ComplaintState) -> str:
+    return "retry" if state.get("check_result") == False else "approved"
+workflow.add_conditional_edges("intake", route_after_intake, {"retry": "intake", "approved": "validate"})
+
+# Validation can go to either investigate or back to intake based on the result
+def route_after_validate(state: ComplaintState) -> str:
+    if not state.get("validation_result", True):
+        if state.get("category") == "other":
+            return "escalate"
+        else:
+            return "retry"
+    else:
+        return "approved"
+workflow.add_conditional_edges("validate", route_after_validate, {"retry": "intake", "approved": "investigate", "escalate": "close"})
+
 workflow.add_edge("investigate", "resolve")
 workflow.add_edge("resolve", "close")
  
@@ -67,27 +94,20 @@ workflow.add_edge("close", END)
 app = workflow.compile()
 
 
-if __name__ == "__main__":
+# ---------------------------------------------------
+# Step 4: Test the Workflow
+# ---------------------------------------------------
 
-    # ---------------------------------------------------
-    # INITIAL STATE DEFINITION
-    # ---------------------------------------------------
+# test_complaints = [
+#     "The Downside Up portal opens at different times each day. How do I predict when?",
+#     "Demogorgons sometimes work together and sometimes fight. What's their deal?",
+#     "El can move things with her mind but can't lift heavy rocks. Why?",
+#     "Why do creatures and power lines react so strangely together?",
+#     "This is not a valid complaint about something random"  # Should be rejected
+# ]
 
-    initial_state: ComplaintState = {
-        "complaint": "I am poor"
-    }
+print("\nLangGraph complaint processor initialized.")
+complaint = input("Enter a complaint: ")
+print("\nProcessing the complaint...")
 
-    print("LangGraph complaint processor initialized.")
-    print("\nInitial State:\n")
-    for key, value in initial_state.items():
-        print(f"{key}: {value}")
-
-        "status": "received",
-        "resolution_notes": [],
-        "requires_human_review": False,
-    }
-
-    print("LangGraph complaint processor initialized.")
-    print("\nInitial State:\n")
-    for key, value in initial_state.items():
-        print(f"{key}: {value}")
+result = app.invoke({"complaint": complaint})
