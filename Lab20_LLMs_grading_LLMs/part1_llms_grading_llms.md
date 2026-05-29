@@ -74,39 +74,14 @@ HaluEval is designed to measure hallucination behavior in large language models,
 
 ## Step 3 — Write 5 Evaluation Prompts
 
-### 1 - Full Clinical Summary
+### 1 - Medication
 
 **Prompt:**  
-Summarize the following patient record into a concise clinical summary for a physician.  
-Make sure to include diagnoses, medications, allergies, and recent lab results. Do not omit any critical medical information.  
+Extract all medications mentioned in the patient record, including dosage, frequency, and route of administration. If the patient is not currently under any treatment, explicitly state "No medication".  
 [Copy or attach patient record]
 
-**Ground Truth:** No single correct answer. Correctness is defined by inclusion of all key facts:
-- All diagnoses listed in the record
-- All current medications with dosage
-- All documented allergies
-- All abnormal lab results
-- No hallucinated or extra conditions
-
-**Verification Method:** Human evaluation  
-Clinicians check whether all required fields are present and whether any incorrect or invented medical information appears.
-
-**Primary Failure Mode:**  
-Missing critical information (especially allergies, medications, or abnormal labs)
-
-**Why this prompt matters:**  
-This directly simulates real hospital usage where incomplete summaries could lead to unsafe clinical decisions such as prescribing contraindicated medications.
-
----
-
-### 2 - Medication
-
-**Prompt:**  
-Extract all medications mentioned in the patient record, including dosage, frequency, and route of administration.  
-[Copy or attach patient record]
-
-**Ground Truth:** Yes - Exact list of medications exists in the record  
-Correct output is a structured list of all medications exactly as documented.
+**Ground Truth:** Yes - Exact list of medications prescribed to the patient  
+Correct output is a structured list of all current medications exactly as documented.  
 
 **Verification Method:** Rule-based
 - Exact match against medication names  
@@ -121,13 +96,13 @@ Medication errors are one of the highest-risk failure points in clinical summari
 
 ---
 
-### 3 - Allergies
+### 2 - Allergies
 
 **Prompt:**  
 List all patient allergies and indicate severity if available. If no allergies are present, explicitly state "No known allergies".  
 [Insert or attach patient record]
 
-**Ground Truth:** Yes - Allergy list is explicitly present in record  
+**Ground Truth:** Yes - Exact list of allergies mentioned in the report  
 Expected output must exactly reflect documented allergies, including severity notes.
 
 **Verification Method:** Rule-based  
@@ -143,7 +118,29 @@ Allergy omission is a critical patient safety risk, especially for drug administ
 
 ---
 
-### 4 - Timeline of Clinical Events
+### 3 - Vaccines
+
+**Prompt:**  
+Check whether a patient has been vaccinated against a concrete illness.  
+[Insert or attach patient record]
+
+**Ground Truth:** Yes - Exact list of vaccinations included in the report  
+The expected output is a boolean. If the patient has been adminstered the vaccination, also the number of repetitions and the date of the last administration.
+
+**Verification Method:** Rule-based  
+- Keyword match for vaccine, quantity, and date
+- Must not include vaccinations not present in record  
+- Must return False if the patient has not been administered the asked vaccine.
+
+**Primary Failure Mode:**  
+Omission of vaccines or hallucinating vaccines not in record
+
+**Why this prompt matters:**  
+Vaccine omission is a critical patient safety risk.
+
+---
+
+### 4 - Clinical Events
 
 **Prompt:**  
 Reconstruct a chronological timeline of the patient’s key clinical events, including admissions, diagnoses, procedures, and major test results.  
@@ -165,44 +162,41 @@ Clinical decision-making often depends on understanding progression over time (e
 
 ---
 
-### 5 - Discharge Summary
+### 5 - Blood type
 
 **Prompt:**  
-Generate a discharge summary for this patient suitable for transfer to another hospital. Include diagnosis, treatment course, medications at discharge, and follow-up recommendations.
+Find the blood type of the patient in his/her medical record.  
+[Insert or attach patient record]
 
-**Ground Truth:** No single correct answer  
-Correctness depends on faithful coverage of record without introducing new medical claims.
+**Ground Truth:** Yes - Blood type of the patient (a string)
 
-**Verification Method:** LLM-as-judge + Human evaluation  
-- LLM checks structure completeness and internal consistency  
-- Clinician verifies factual correctness and absence of hallucinations
+**Verification Method:** Rule-based  
+- Keyword match for blood type  
 
 **Primary Failure Mode:**  
-Hallucination of treatment plans or follow-up recommendations not supported by record
+Return of an incorrect blood type.
 
 **Why this prompt matters:**  
-Discharge summaries are high-stakes documents used directly in continuity of care, making both hallucination and omission critical risks.
+A transfusion of blood from the incorrect type is a critical safety risk for the patient.
+
 
 ## Step 4 - Design your Judge
 
-**Chosen prompt:** Timeline of Critical Events
+**Chosen prompt/scenario:** Timeline of Critical Events
 
 ### Task Description:
-You are evaluating a model that has been asked to reconstruct a chronological timeline of key clinical events from a patient record.
-
-The model output should summarize and order events such as admissions, diagnoses, procedures, lab results, and treatment changes in a medically accurate timeline.  
-
-The goal is to ensure that the timeline is both **complete and temporally correct**, without introducing hallucinated or unsupported events.
+You are evaluating a model that has been asked to perform a summarization task given a patient’s medical record.  
+The goal is to ensure that the summary is both **complete and temporally correct**, without omitting relevant data or introducing hallucinated or unsupported events.
 
 ---
 
 ### Evaluation Criteria:
 
 1. **Completeness of Clinical Events:**  
-   The response includes all major clinical events present in the source record (e.g., admissions, diagnoses, procedures, significant lab changes, medication changes).
+   The response includes all major clinical events present in the source record that are relevant for answering the original question.
 
 2. **Temporal Correctness:**  
-   Events are ordered correctly in time, with no incorrect sequencing or contradictions in the timeline.
+   Events are ordered correctly in time, with no incorrect sequencing or contradictions.
 
 3. **Factual Faithfulness (No Hallucination):**  
    The response does not introduce any events, diagnoses, or treatments not explicitly supported by the patient record.
@@ -212,15 +206,15 @@ The goal is to ensure that the timeline is both **complete and temporally correc
 ### Reasoning Steps:
 
 **Step 1:**  
-Check the source patient record and extract all clinically relevant events that should appear in the timeline.
+Check the source patient record and extract all clinically relevant events that should appear in the summary.
 
 **Step 2:**  
-Compare the model’s output against the extracted event list to determine:
+Compare the model’s output against the extracted summary to determine:
 - Missing events (omissions)
 - Extra events (hallucinations)
 
 **Step 3:**  
-Verify chronological ordering:
+If relevant for answering the question, verify chronological ordering:
 - Are events in correct sequence?
 - Are there any temporal contradictions (e.g., treatment before diagnosis)?
 
