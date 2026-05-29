@@ -1,0 +1,251 @@
+
+==================================================
+FICTITIOUS MEDICAL REPORT
+Patient ID: P-12031
+==================================================
+
+Name: Ethan M. Carter
+Age: 12 years
+Sex: Male
+Date of Birth: 14-Feb-2014
+Blood Type: O+
+
+----------------------------------------
+ALLERGIES
+----------------------------------------
+- Penicillin: Generalized urticaria and mild facial edema.
+  Severity: Moderate.
+- No food allergies documented.
+
+----------------------------------------
+CURRENT MEDICATIONS
+----------------------------------------
+- Albuterol sulfate inhalation aerosol 90 mcg/puff
+  Dosage: 2 puffs
+  Frequency: Every 6 hours as needed for wheezing
+  Route: Inhalation
+
+- Fluticasone propionate inhaler 110 mcg
+  Dosage: 1 puff
+  Frequency: Twice daily
+  Route: Inhalation
+
+----------------------------------------
+IMMUNIZATION RECORD
+----------------------------------------
+- Hepatitis B Vaccine: 18-Feb-2014
+- DTaP Series Completed: 21-Aug-2018
+- MMR Vaccine Booster: 05-Sep-2019
+- Varicella Vaccine Booster: 05-Sep-2019
+- Influenza Vaccine: 14-Oct-2025
+- COVID-19 Pediatric Booster: 02-Nov-2024
+- HPV Vaccine (1st dose): 16-Jan-2026
+
+----------------------------------------
+KEY CLINICAL EVENTS
+----------------------------------------
+03-Apr-2019
+Diagnosis:
+- Mild persistent bronchial asthma.
+
+Clinical Notes:
+- Spirometry demonstrated mild reversible airflow limitation.
+- Initiated inhaled corticosteroid therapy.
+
+17-Nov-2022
+Emergency Department Visit:
+- Acute asthma exacerbation triggered by viral upper respiratory infection.
+- Oxygen saturation: 92% on room air.
+- Treated with nebulized albuterol and oral corticosteroids.
+- Discharged same day with improved respiratory status.
+
+11-Jan-2025
+Orthopedic Evaluation:
+- Left distal radius buckle fracture following sports injury.
+Procedure:
+- Short arm cast placement.
+Outcome:
+- Uneventful healing after 6 weeks.
+
+02-Feb-2026
+Routine Pediatric Follow-Up:
+- Height and weight within normal growth percentiles.
+- Pulmonary examination stable.
+- Peak flow readings improved compared to prior visit.
+
+==================================================
+FICTITIOUS MEDICAL REPORT
+Patient ID: P-40214
+==================================================
+
+Name: Laura Bennett
+Age: 40 years
+Sex: Female
+Date of Birth: 09-Jun-1985
+Blood Type: A-
+
+----------------------------------------
+ALLERGIES
+----------------------------------------
+- Shellfish: Pruritus, facial swelling, and nausea.
+  Severity: Severe.
+- Latex: Contact dermatitis.
+  Severity: Mild.
+
+----------------------------------------
+CURRENT MEDICATIONS
+----------------------------------------
+- Metformin 500 mg
+  Dosage: 1 tablet
+  Frequency: Twice daily
+  Route: Oral
+
+- Lisinopril 10 mg
+  Dosage: 1 tablet
+  Frequency: Once daily
+  Route: Oral
+
+- Sertraline 50 mg
+  Dosage: 1 tablet
+  Frequency: Once daily
+  Route: Oral
+
+----------------------------------------
+IMMUNIZATION RECORD
+----------------------------------------
+- Tdap Booster: 18-May-2021
+- Influenza Vaccine: 03-Oct-2025
+- COVID-19 Booster (mRNA): 20-Sep-2025
+- Hepatitis A Vaccine: 15-Jul-2018
+- Shingrix Vaccine Dose 1: 04-Mar-2025
+
+----------------------------------------
+KEY CLINICAL EVENTS
+----------------------------------------
+14-Aug-2017
+Diagnosis:
+- Type 2 Diabetes Mellitus.
+
+Laboratory Findings:
+- HbA1c: 7.8%
+- Fasting glucose: 168 mg/dL.
+
+Management:
+- Lifestyle modification counseling.
+- Initiation of metformin therapy.
+
+22-Feb-2021
+Hospital Admission:
+- Community-acquired pneumonia.
+
+Investigations:
+- Chest radiograph revealed right lower lobe infiltrate.
+- Elevated CRP and leukocytosis noted.
+
+Treatment:
+- Intravenous ceftriaxone and azithromycin administered.
+- Discharged after 4 days with oral antibiotics.
+
+07-Dec-2023
+Procedure:
+- Screening colonoscopy.
+
+Findings:
+- Single benign hyperplastic polyp removed.
+- No evidence of malignancy.
+
+09-Apr-2026
+Primary Care Follow-Up:
+- Blood pressure controlled at 124/78 mmHg.
+- HbA1c reduced to 6.6%.
+- Renal function within normal limits.
+
+==================================================
+FICTITIOUS MEDICAL REPORT
+Patient ID: P-70102
+==================================================
+
+Name: Richard Holloway
+Age: 70 years
+Sex: Male
+Date of Birth: 28-Nov-1955
+Blood Type: B+
+
+----------------------------------------
+ALLERGIES
+----------------------------------------
+No known allergies.
+
+----------------------------------------
+CURRENT MEDICATIONS
+----------------------------------------
+- Apixaban 5 mg
+  Dosage: 1 tablet
+  Frequency: Twice daily
+  Route: Oral
+
+- Atorvastatin 40 mg
+  Dosage: 1 tablet
+  Frequency: Once nightly
+  Route: Oral
+
+- Metoprolol succinate 50 mg
+  Dosage: 1 tablet
+  Frequency: Once daily
+  Route: Oral
+
+- Aspirin 81 mg
+  Dosage: 1 tablet
+  Frequency: Once daily
+  Route: Oral
+
+----------------------------------------
+IMMUNIZATION RECORD
+----------------------------------------
+- Pneumococcal Vaccine (PCV13): 12-Jan-2022
+- Pneumococcal Vaccine (PPSV23): 15-Mar-2023
+- Influenza Vaccine: 10-Oct-2025
+- COVID-19 Booster: 18-Sep-2025
+- Herpes Zoster Vaccine: 04-Jun-2021
+
+----------------------------------------
+KEY CLINICAL EVENTS
+----------------------------------------
+05-May-2018
+Diagnosis:
+- Chronic atrial fibrillation.
+
+Diagnostic Findings:
+- ECG demonstrated irregularly irregular rhythm.
+- Echocardiogram showed preserved left ventricular ejection fraction.
+
+Management:
+- Long-term anticoagulation initiated.
+
+18-Sep-2020
+Hospital Admission:
+- Non-ST elevation myocardial infarction (NSTEMI).
+
+Procedures:
+- Coronary angiography.
+- Percutaneous coronary intervention with drug-eluting stent placement in the left anterior descending artery.
+
+Laboratory Findings:
+- Elevated troponin I levels.
+- LDL cholesterol: 154 mg/dL.
+
+16-Nov-2024
+Procedure:
+- Bilateral cataract extraction with intraocular lens implantation.
+Outcome:
+- Visual acuity significantly improved postoperatively.
+
+21-Apr-2026
+Cardiology Follow-Up:
+- Stable cardiac rhythm under rate control therapy.
+- Blood pressure: 130/82 mmHg.
+- Stress test negative for inducible ischemia.
+
+==================================================
+END OF REPORTS
+==================================================

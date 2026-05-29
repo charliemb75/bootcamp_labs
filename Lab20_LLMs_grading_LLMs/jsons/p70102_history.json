@@ -1,0 +1,18 @@
+{
+  "score": 5,
+  "reasoning": "The model's summary accurately captures all major clinical events from the patient's medical record, including the diagnosis of chronic atrial fibrillation in 2018, the NSTEMI hospitalization in 2020, the cataract extraction in 2024, and the cardiology follow-up in 2026. The events are presented in the correct chronological order, and there are no hallucinations or inaccuracies in the medical terminology used. The summary is complete and faithful to the source record.",
+  "criteria_met": {
+    "completeness_of_clinical_events": true,
+    "temporal_correctness": true,
+    "factual_faithfulness": true
+  },
+  "evaluation_metrics": {
+    "time_taken": 4.645709,
+    "token_usage": {
+      "prompt_tokens": 1205,
+      "completion_tokens": 151,
+      "total_tokens": 1356
+    },
+    "estimated_cost": 0.000271
+  }
+}

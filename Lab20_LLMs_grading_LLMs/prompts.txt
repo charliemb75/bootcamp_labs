@@ -1,0 +1,21 @@
+Give me a summary of the medication that this patient is taking.
+
+Does this patient have any known allergies? If so, include how severe they are.
+
+Has this patient been vaccinated against Hepatitis B?
+Has this patient been vaccinated against rabies?
+
+Give me a summary of the clinical events of this patient.
+
+Find this patient's blood type.
+
+Lab20_LLMs_grading_LLMs\medical_reports\report_p12031.txt
+Lab20_LLMs_grading_LLMs\medical_reports\report_p40214.txt
+Lab20_LLMs_grading_LLMs\medical_reports\report_p70102.txt
+
+Lab20_LLMs_grading_LLMs\model_outputs\p12031_allergies.txt
+Lab20_LLMs_grading_LLMs\model_outputs\p12031_hep_b.txt
+Lab20_LLMs_grading_LLMs\model_outputs\p12031_rabies.txt
+Lab20_LLMs_grading_LLMs\model_outputs\p40214_blood.txt
+Lab20_LLMs_grading_LLMs\model_outputs\p40214_medication.txt
+Lab20_LLMs_grading_LLMs\model_outputs\p70102_history.txt

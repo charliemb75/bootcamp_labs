@@ -1,0 +1,18 @@
+{
+  "score": 5,
+  "reasoning": "The model response accurately states that there is no rabies vaccination listed in the immunization record. It correctly identifies all the documented vaccines and confirms the absence of a rabies vaccine, which directly answers the original question. There are no missing facts, hallucinations, or ordering issues present in the response.",
+  "criteria_met": {
+    "completeness_of_clinical_events": true,
+    "temporal_correctness": true,
+    "factual_faithfulness": true
+  },
+  "evaluation_metrics": {
+    "time_taken": 3.040244,
+    "token_usage": {
+      "prompt_tokens": 1026,
+      "completion_tokens": 116,
+      "total_tokens": 1142
+    },
+    "estimated_cost": 0.000224
+  }
+}

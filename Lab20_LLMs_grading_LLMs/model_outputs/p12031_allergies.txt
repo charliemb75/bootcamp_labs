@@ -1,0 +1,7 @@
+Yes. The patient has a documented allergy to penicillin.
+
+Allergy: Penicillin
+Reaction/Effects: Generalized urticaria (hives) and mild facial edema (swelling)
+Severity: Moderate
+
+The report also states that there are no documented food allergies.

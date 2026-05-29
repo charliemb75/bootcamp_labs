@@ -1,0 +1,18 @@
+{
+  "score": 5,
+  "reasoning": "The model response accurately confirms that the patient has been vaccinated against Hepatitis B, referencing the immunization record which states the vaccine was administered on 18-Feb-2014. The response is complete, correctly addresses the original question, and does not introduce any unsupported information.",
+  "criteria_met": {
+    "completeness_of_clinical_events": true,
+    "temporal_correctness": true,
+    "factual_faithfulness": true
+  },
+  "evaluation_metrics": {
+    "time_taken": 4.313102,
+    "token_usage": {
+      "prompt_tokens": 1020,
+      "completion_tokens": 110,
+      "total_tokens": 1130
+    },
+    "estimated_cost": 0.000219
+  }
+}

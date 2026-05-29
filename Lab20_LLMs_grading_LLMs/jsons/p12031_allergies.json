@@ -1,0 +1,18 @@
+{
+  "score": 5,
+  "reasoning": "The model response accurately captures all relevant information regarding the patient's allergy to penicillin, including the type of reaction (generalized urticaria and mild facial edema) and the severity (moderate). It also correctly notes that there are no documented food allergies. The information is complete, factually faithful, and uses appropriate medical terminology without any errors or omissions.",
+  "criteria_met": {
+    "completeness_of_clinical_events": true,
+    "temporal_correctness": true,
+    "factual_faithfulness": true
+  },
+  "evaluation_metrics": {
+    "time_taken": 4.2985,
+    "token_usage": {
+      "prompt_tokens": 1029,
+      "completion_tokens": 127,
+      "total_tokens": 1156
+    },
+    "estimated_cost": 0.000231
+  }
+}

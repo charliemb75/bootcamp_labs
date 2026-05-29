@@ -1,0 +1,73 @@
+==================================================
+FICTITIOUS MEDICAL REPORT
+Patient ID: P-12031
+==================================================
+
+Name: Ethan M. Carter
+Age: 12 years
+Sex: Male
+Date of Birth: 14-Feb-2014
+Blood Type: O+
+
+----------------------------------------
+ALLERGIES
+----------------------------------------
+- Penicillin: Generalized urticaria and mild facial edema.
+  Severity: Moderate.
+- No food allergies documented.
+
+----------------------------------------
+CURRENT MEDICATIONS
+----------------------------------------
+- Albuterol sulfate inhalation aerosol 90 mcg/puff
+  Dosage: 2 puffs
+  Frequency: Every 6 hours as needed for wheezing
+  Route: Inhalation
+
+- Fluticasone propionate inhaler 110 mcg
+  Dosage: 1 puff
+  Frequency: Twice daily
+  Route: Inhalation
+
+----------------------------------------
+IMMUNIZATION RECORD
+----------------------------------------
+- Hepatitis B Vaccine: 18-Feb-2014
+- DTaP Series Completed: 21-Aug-2018
+- MMR Vaccine Booster: 05-Sep-2019
+- Varicella Vaccine Booster: 05-Sep-2019
+- Influenza Vaccine: 14-Oct-2025
+- COVID-19 Pediatric Booster: 02-Nov-2024
+- HPV Vaccine (1st dose): 16-Jan-2026
+
+----------------------------------------
+KEY CLINICAL EVENTS
+----------------------------------------
+03-Apr-2019
+Diagnosis:
+- Mild persistent bronchial asthma.
+
+Clinical Notes:
+- Spirometry demonstrated mild reversible airflow limitation.
+- Initiated inhaled corticosteroid therapy.
+
+17-Nov-2022
+Emergency Department Visit:
+- Acute asthma exacerbation triggered by viral upper respiratory infection.
+- Oxygen saturation: 92% on room air.
+- Treated with nebulized albuterol and oral corticosteroids.
+- Discharged same day with improved respiratory status.
+
+11-Jan-2025
+Orthopedic Evaluation:
+- Left distal radius buckle fracture following sports injury.
+Procedure:
+- Short arm cast placement.
+Outcome:
+- Uneventful healing after 6 weeks.
+
+02-Feb-2026
+Routine Pediatric Follow-Up:
+- Height and weight within normal growth percentiles.
+- Pulmonary examination stable.
+- Peak flow readings improved compared to prior visit.
